@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+groq
+pydantic>=2.0
+python-multipart
+pillow
+pdfplumber
+python-docx
+transformers
+torch
+torchvision
+ultralytics
+filetype
