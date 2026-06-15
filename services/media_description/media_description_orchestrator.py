@@ -31,7 +31,7 @@ async def orchestrate(
     data: dict,
     images: list[UploadFile] | None,
     document: UploadFile | None,
-) -> str:
+) -> list[str]:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     saved_image_paths: list[str] = []
     saved_doc_path: str | None = None
@@ -62,7 +62,7 @@ async def orchestrate(
 
         master_context = get_master_context()
         prompt = prompt_service.build_prompt(module, data, master_context, image_output, document_output)
-        return llm_service.generate_description(prompt)
+        return llm_service.generate_descriptions(prompt)
 
     finally:
         for path in saved_image_paths:

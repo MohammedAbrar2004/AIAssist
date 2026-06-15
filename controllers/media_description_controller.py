@@ -30,13 +30,13 @@ async def handle_media_description(
         return {"error": "Invalid JSON in 'data' field.", "status": 400}
 
     try:
-        description = await orchestrate(
+        descriptions = await orchestrate(
             module=module,
             data=data,
             images=images if has_images else None,
             document=document if has_document else None,
         )
-        return {"description": description}
+        return {"descriptions": descriptions}
     except ValueError as e:
         return {"error": str(e), "status": 400}
     except Exception as e:

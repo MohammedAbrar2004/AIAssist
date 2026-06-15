@@ -1,7 +1,7 @@
 import os
 
 PROMPTS_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "prompts", "media")
-SUPPORTED_MODULES = {"incident", "risk", "capa"}
+SUPPORTED_MODULES = {"audit", "capa", "compliance", "incident", "inspection", "near_miss", "non_compliance", "risk"}
 
 
 def build_prompt(

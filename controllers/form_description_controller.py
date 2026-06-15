@@ -7,8 +7,8 @@ def handle_form_description(request: FormDescriptionRequest) -> dict:
     try:
         master_context = get_master_context()
         prompt = prompt_service.build_prompt(request.module, request.data, master_context)
-        description = llm_service.generate_description(prompt)
-        return {"description": description}
+        descriptions = llm_service.generate_descriptions(prompt)
+        return {"descriptions": descriptions}
     except ValueError as e:
         return {"error": str(e), "status": 400}
     except Exception as e:

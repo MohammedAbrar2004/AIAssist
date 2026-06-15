@@ -7,7 +7,7 @@ class FormDescriptionRequest(BaseModel):
 
 
 class FormDescriptionResponse(BaseModel):
-    description: str
+    descriptions: list[str]
 
 
 class ErrorResponse(BaseModel):
