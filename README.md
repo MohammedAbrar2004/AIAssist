@@ -64,7 +64,7 @@ YOLO_MODEL = "yolov8n.pt"
 
 # --- Media Limits ---
 MAX_IMAGES = 10
-MAX_IMAGE_SIZE_MB = 2 (per image)
+MAX_IMAGE_SIZE_MB = 10
 MAX_DOCUMENT_SIZE_MB = 50
 SUPPORTED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp"]
 SUPPORTED_DOCUMENT_TYPES = ["application/pdf",
@@ -155,9 +155,6 @@ Content-Type: application/json
     "location": "Plant A",
     "severity": "High",
     "reported_by": "John Doe"
-    ..
-    ...
-    ....
   }
 }
 ```
@@ -224,10 +221,6 @@ data:     {                                 (JSON string, form field)
             "location": "Plant A",
             "severity": "High",
             "reported_by": "John Doe"
-            .
-            ..
-            ...
-            ....
           }
 images:   fire1.jpg                         (file, optional — up to 10)
           fire2.jpg
@@ -240,7 +233,7 @@ document: fire_incident_report.pdf          (file, optional — max 1)
 
 ```json
 {
-  "description": "The uploaded media  show signs of a fire incident at an industrial facility. ..."
+  "description": "The uploaded images show signs of a fire incident at an industrial facility. ..."
 }
 ```
 
